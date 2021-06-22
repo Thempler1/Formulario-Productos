@@ -1,0 +1,32 @@
+
+<div class="container">
+    <br>
+    <form class="form-control" [formGroup]="formularioContacto" (ngSubmit)="enviar()">
+        <div class="input-group mb-3"><p>codigo:<input class="form-control" type="text" formControlName="codigo"></p></div>
+        <div class="input-group mb-3"><p>Nombre:<input class="form-control" type="text" formControlName="nombre"></p></div>
+        <div class="input-group mb-3"><p>Precio:<input class="form-control" type="number" formControlName="precio"></p></div>
+        <div class="input-group mb-3"><p>Stock:<input  class="form-control" type="number" formControlName="stock"></p></div>
+        <div><button class="btn btn-success" type="submit">Enviar</button></div>
+        <div><button class="btn btn-warning" type="reset">Reset</button></div>
+    </form>
+    <br>
+    <div border="1">
+        <table class="table table-dark table-hover table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Codigo</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Stock</th>
+    
+                </tr>
+                <tr *ngFor="let product of products">
+                    <td>{{ product.codigo }}</td>
+                    <td>{{ product.nombre }}</td>
+                    <td>{{ product.precio }}</td>
+                    <td>{{ product.stock }}</td>
+                </tr>
+            </thead>
+        </table>
+    </div>
+</div>
